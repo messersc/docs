@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JAMM integration - RNA-Seq analysis in Galaxy</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> RNA-Seq analysis in Galaxy</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../rna">RNA-Seq</a>
+            </li>
+        
+
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../galaxy">Galaxy</a>
+            </li>
+        
+
+    
+        
+            <li class="toctree-l1 current">
+                <a class="current" href=".">JAMM integration</a>
+            </li>
+        
+
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../reproducible">Reproducible research</a>
+            </li>
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href=".."></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    <li>JAMM integration</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <h1 id="jamm-galaxy-integration">JAMM Galaxy integration</h1>
+<p>JAMM is a peak finder for NGS data.
+doi: 10.1093/bioinformatics/btu568</p>
+<h2 id="jamm-wrapper">JAMM wrapper</h2>
+<p>Find it here: 
+https://github.com/messersc/jamm</p>
+<h2 id="help-for-writing-a-tool-definition-xml">Help for writing a tool definition (XML)</h2>
+<p>Every tool needs a xml defining the interface exposed to the user.</p>
+<p>Tutorials can be found here:
+https://wiki.galaxyproject.org/Admin/Tools/ToolConfigSyntax
+http://saml.rilspace.com/creating-a-galaxy-tool-for-r-scripts-that-output-images-and-pdfs
+http://gmod.org/wiki/Galaxy_Tutorial_2012_Extras</p>
+<h2 id="writing-a-wrapper">Writing a wrapper</h2>
+<p>In case your tool behaves in a different way then can be handled 
+by the xml alone, you will have to write an additional wrapper.</p>
+<h3 id="criteria-do-i-need-a-wrapper">Criteria (Do I need a wrapper)</h3>
+<ul>
+<li>Input files are not passed through arguments but loaded based on predetermined fixed names<ul>
+<li>The wrapper can create symbolic links between the files and the predetermined fixed names in the cwd </li>
+</ul>
+</li>
+<li>Output files with conditional names are not passed through arguments<ul>
+<li>The wrapper can create symbolic links between the files and predetermined fixed names in the cwd </li>
+</ul>
+</li>
+<li>Using R functions<ul>
+<li>The wrapper can be used for libraries loading, data preprocessing and argument parsing </li>
+</ul>
+</li>
+<li>Multiple command lines<ul>
+<li>A simple bash wrapper can be used to pass arguments and call multiple commands</li>
+</ul>
+</li>
+</ul>
+<p>http://wiki.sb-roscoff.fr/ifb/index.php/Tool_Integration_Short_Tutorial</p>
+<p>If you need to write a wrapper, best look at examples. You can choose e.g. between
+python, perl or bash.</p>
+<p>Examples can be found here:
+https://www.e-biogenouest.org/wiki/WrapperpythonforGalaxy:Asyntaxexample
+https://github.com/bgruening/galaxytools
+https://github.com/peterjc/pico_galaxy/blob/master/tools/protein_analysis/README.rst</p>
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../reproducible" class="btn btn-neutral float-right" title="Reproducible research"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../galaxy" class="btn btn-neutral" title="Galaxy"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+      <span><a href="../galaxy" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../reproducible" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>
