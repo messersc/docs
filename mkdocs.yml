@@ -1,5 +1,8 @@
 site_name: RNA-Seq analysis in Galaxy
 pages:
 - [index.md, Home]
-- [about.md, About]
+- [rna.md, RNA-Seq]
+- [galaxy.md, Galaxy]
+- [jamm.md, JAMM integration]
+- [reproducible.md, Reproducible research]
 theme: readthedocs
