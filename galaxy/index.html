@@ -104,13 +104,13 @@
 <p>http://wiki.bits.vib.be/index.php/RNA-Seq_analysis_for_differential_expression#Galaxy</p>
 <h2 id="galaxy-challenges">Galaxy challenges</h2>
 <ul>
-<li>building indeces for mappers</li>
+<li>building indices for mappers</li>
 <li>upload of large files (use FTP!)<ul>
 <li>symlinking is probably enough, but right now only admins can do this</li>
 </ul>
 </li>
 </ul>
-<h2 id="simple-workflow-ny-genome-center">Simple Workflow - NY Genome Center</h2>
+<h1 id="simple-workflow-ny-genome-center">Simple Workflow - NY Genome Center</h1>
 <ul>
 <li>STAR</li>
 <li>featurecount</li>
@@ -124,6 +124,21 @@
 <h2 id="legacy">Legacy</h2>
 <ul>
 <li>provide Tophat2 and BWA as fall-back mappers</li>
+</ul>
+<h1 id="custom-genomes-building-indices">Custom Genomes, Building indices</h1>
+<p>One of the hurdles for the common user is the need for (custom) genomes and indices for their preferred mapping tools.
+There is the option of using custom genomes from the history and building indices from there, however this is not always
+straight-forward and wasted effort and (computing) time, even more for genomes used frequently and from multiple users.</p>
+<p>Therefore, Galaxy now offers the possibility for admins to upload genomes and build indices using data managers.
+Further, new DBKeys can easily be generated (mm10, hg38).</p>
+<h3 id="pitfalls">Pitfalls</h3>
+<p>UCSC annotation is prefered over Ensembl, as there are slight differences in strucure (e.g. chr1 vs 1). 
+The data manager for building bwa indices fails with Ensembl genomes. Keep that in mind.</p>
+<h2 id="from-the-toolshed">From the toolshed</h2>
+<ul>
+<li>data_manager_fetch_genome_dbkeys_all_fasta</li>
+<li>data_manager_bwa_index_builder</li>
+<li>data_manager_rnastar</li>
 </ul>
 
             </div>
