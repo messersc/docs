@@ -26,7 +26,7 @@ http://wiki.bits.vib.be/index.php/RNA-Seq_analysis_for_differential_expression#G
 
 * provide Tophat2 and BWA as fall-back mappers
 
-# Custom Genomes, Building indices
+## Custom Genomes, Building indices
 
 One of the hurdles for the common user is the need for (custom) genomes and indices for their preferred mapping tools.
 There is the option of using custom genomes from the history and building indices from there, however this is not always
@@ -45,4 +45,10 @@ The data manager for building bwa indices fails with Ensembl genomes. Keep that 
 * data_manager_bwa_index_builder
 * data_manager_rnastar
 
+## Workflows: Dataset collections
 
+To facilitate the construction of more complex workflows, dataset collections were introducted.
+Those include dataset pairs, list and paired lists. Obviously, this can be especially useful for a workflow
+processing paired-end reads with an a-priori unknown number of replicates.
+
+However, it is crucial that all the tools in the workflow can handle dataset collections!
