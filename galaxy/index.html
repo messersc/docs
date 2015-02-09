@@ -42,13 +42,6 @@
       <ul class="current">
     
         
-            <li class="toctree-l1 ">
-                <a class="" href="../rna">RNA-Seq</a>
-            </li>
-        
-
-    
-        
             <li class="toctree-l1 current">
                 <a class="current" href=".">Galaxy</a>
             </li>
@@ -125,7 +118,7 @@
 <ul>
 <li>provide Tophat2 and BWA as fall-back mappers</li>
 </ul>
-<h1 id="custom-genomes-building-indices">Custom Genomes, Building indices</h1>
+<h2 id="custom-genomes-building-indices">Custom Genomes, Building indices</h2>
 <p>One of the hurdles for the common user is the need for (custom) genomes and indices for their preferred mapping tools.
 There is the option of using custom genomes from the history and building indices from there, however this is not always
 straight-forward and wasted effort and (computing) time, even more for genomes used frequently and from multiple users.</p>
@@ -140,6 +133,11 @@ The data manager for building bwa indices fails with Ensembl genomes. Keep that 
 <li>data_manager_bwa_index_builder</li>
 <li>data_manager_rnastar</li>
 </ul>
+<h2 id="workflows-dataset-collections">Workflows: Dataset collections</h2>
+<p>To facilitate the construction of more complex workflows, dataset collections were introducted.
+Those include dataset pairs, list and paired lists. Obviously, this can be especially useful for a workflow
+processing paired-end reads with an a-priori unknown number of replicates.</p>
+<p>However, it is crucial that all the tools in the workflow can handle dataset collections!</p>
 
             </div>
           </div>
@@ -150,7 +148,7 @@ The data manager for building bwa indices fails with Ensembl genomes. Keep that 
         <a href="../jamm" class="btn btn-neutral float-right" title="JAMM integration"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../rna" class="btn btn-neutral" title="RNA-Seq"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -176,7 +174,7 @@ The data manager for building bwa indices fails with Ensembl genomes. Keep that 
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-      <span><a href="../rna" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       <span style="margin-left: 15px"><a href="../jamm" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
