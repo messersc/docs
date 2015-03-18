@@ -39,11 +39,21 @@ Further, new DBKeys can easily be generated (mm10, hg38).
 UCSC annotation is prefered over Ensembl, as there are slight differences in strucure (e.g. chr1 vs 1). 
 The data manager for building bwa indices fails with Ensembl genomes. Keep that in mind.
 
-## From the toolshed
+### From the toolshed
 
 * data_manager_fetch_genome_dbkeys_all_fasta
 * data_manager_bwa_index_builder
 * data_manager_rnastar
+
+### builds.txt
+For genomes to show up in some (?) drop-down menus (e.g. edit -> change genome for history items), they must be added to galaxy-dist/tool-data/shared/ucsc.
+
+The following lines where added after I used the data_manager_fetch_genome_dbkeys_all_fasta:
+
+```
+hg38	Human Dec. 2013	(CRCh38/hg38) (hg38)
+mm10	Mouse Dec. 2011 (NCBI38/mm10) (mm10)
+```
 
 ## Workflows: Dataset collections
 
@@ -52,3 +62,4 @@ Those include dataset pairs, list and paired lists. Obviously, this can be espec
 processing paired-end reads with an a-priori unknown number of replicates.
 
 However, it is crucial that all the tools in the workflow can handle dataset collections!
+
