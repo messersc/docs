@@ -9,6 +9,7 @@ https://github.com/messersc/jamm
 
 ## Help for writing a tool definition (XML)
 Every tool needs a xml defining the interface exposed to the user.
+The GUI will be rendered according to the XML, so all input datasets and (optional) parameters have to be specified in the XML. 
 
 Tutorials can be found here:
 
@@ -18,13 +19,19 @@ http://saml.rilspace.com/creating-a-galaxy-tool-for-r-scripts-that-output-images
 
 http://gmod.org/wiki/Galaxy_Tutorial_2012_Extras
 
+### Cheetah
+
+Cheetah is the template language to built the command that is run by galaxy from the input arguments made by the user over the GUI. It offers some basic loop and conditionals.
+
 
 ## Writing a wrapper
 
 In case your tool behaves in a different way then can be handled 
 by the xml alone, you will have to write an additional wrapper.
 
-## Criteria (Do I need a wrapper)
+JAMM for instance uses a directory as input. This is contrary to how Galaxy abstracts data, e.g. mapping files to history entries. With a wrapper, we can run out tool nevertheless.
+
+## Criteria (Do I need a wrapper?)
 
 * Input files are not passed through arguments but loaded based on predetermined fixed names
     * The wrapper can create symbolic links between the files and the predetermined fixed names in the cwd 

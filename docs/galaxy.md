@@ -41,11 +41,21 @@ Another possibility is to clone the public Galaxy instance, which pulls all the 
 UCSC annotation is prefered over Ensembl, as there are slight differences in strucure (e.g. chr1 vs 1). 
 The data manager for building bwa indices fails with Ensembl genomes. Keep that in mind.
 
-## From the toolshed
+### From the toolshed
 
 * data_manager_fetch_genome_dbkeys_all_fasta
 * data_manager_bwa_index_builder
 * data_manager_rnastar
+
+### builds.txt
+For genomes to show up in some (?) drop-down menus (e.g. edit -> change genome for history items), they must be added to galaxy-dist/tool-data/shared/ucsc.
+
+The following lines where added after I used the data_manager_fetch_genome_dbkeys_all_fasta:
+
+```
+hg38	Human Dec. 2013	(CRCh38/hg38) (hg38)
+mm10	Mouse Dec. 2011 (NCBI38/mm10) (mm10)
+```
 
 ## Workflows: Dataset collections
 
